@@ -1,0 +1,34 @@
+<h:html xmlns="http://www.w3.org/2002/xforms"
+        xmlns:h="http://www.w3.org/1999/xhtml"
+        xmlns:ev="http://www.w3.org/2001/xml-events"
+        xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jr="http://openrosa.org/javarosa">
+  <h:head>
+    <h:title>Simple Example</h:title>
+ 
+    <model>
+      <instance>
+        <faims id="simple_example">
+          <tabgroup1>
+             <tab1>g
+               <text></text>
+             </tab1>
+          </tabgroup1>
+        </faims>
+      </instance>
+      <bind nodeset="/faims/tabgroup1/tab1/text" type="string"/>
+    </model>
+  </h:head>
+ 
+  <h:body>
+    <group ref="tabgroup1">
+      <label></label>
+      <group ref="tab1">
+         <label>{tab_name}</label>
+         <input ref="text">
+            <label>Text:</label>
+         </input>
+      </group>
+    </group>
+  </h:body>
+</h:html>

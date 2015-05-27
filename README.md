@@ -1,4 +1,4 @@
-Simple Excavation
+Shovel Test Form
 ================
 
-Code produced to demonstrate simple excavation data sampling workflow.
+Code to collect shovel test data in the US Pacific Northwest

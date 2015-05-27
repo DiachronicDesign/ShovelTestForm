@@ -1,4 +1,6 @@
 setFieldValue("tabgroup1/tab1/projNum", "Hello World!");
+
+//set state list
 list = new ArrayList();
 			list.add("Alabama");
 			list.add("Alaska"); 
@@ -52,8 +54,34 @@ list = new ArrayList();
 			list.add("Wisconsin"); 
 			list.add("Wyoming"); 
 populateDropDown("tabgroup1/tab1/state", list);
+
+//set yes/no list
 bool = new ArrayList();
 	bool.add("Yes");
 	bool.add("No");
 populateRadioGroup("tabgroup1/tab1/containArt",bool);
 populateRadioGroup("tabgroup1/tab1/collectArt",bool);
+
+//auto set the time on records
+timestamp = getCurrentTime();
+setFieldValue("tabgroup1/tab1/datetime", timestamp);
+
+/*//update the date with date picker
+onEvent("tabgroup1/tab1/datetime", "click", "editDatetime()");
+
+editDatetime(){
+	showToast("Edit Datetime");
+	dateDef = createViewDef().createDatePicker().setLabel("Edit Date/Time Logged:");
+	createView("tabgroup1/tab1/editTime", dateDef);
+}*/
+
+onEvent("tabgroup1/tab1/saveButton", "click","saveData()");
+
+saveData(){
+	/*editTime = getFieldValue("tabgroup1/tab1/editTime"){
+		if(editTime){
+			String date = getFieldValue("tabgroup1/tab1/editTime");
+			setFieldValue("tabgroup1/tab1/datetime", date);
+		}*/
+	showToast("Record saved!");
+}

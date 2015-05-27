@@ -8,9 +8,9 @@
 
     <model>
       <instance>
-        <faims id="simple_example">
+        <faims id="stpForm">
           <!-- PART 1: Define ui structure -->
-          <tabgroup1>
+		  <tabgroup1>
              <tab1>
                <projNum></projNum>
 			   <state></state>
@@ -29,6 +29,7 @@
 			   <collectArt></collectArt>
 			   <datetime></datetime>
 			   <soilNote></soilNote>
+			   <saveButton />
              </tab1>
           </tabgroup1>
         </faims>
@@ -45,8 +46,8 @@
 	  <bind nodeset="/faims/tabgroup1/tab1/zoneIIdepth" type="decimal"/>
 	  <bind nodeset="/faims/tabgroup1/tab1/zoneIIIdescription" type="freetext"/>
 	  <bind nodeset="/faims/tabgroup1/tab1/zoneIIIdepth" type="decimal"/>
-	  <!--<bind nodeset="/faims/tabgroup1/tab1/datetime" type="time"/>
-	  <bind nodeset="/faims/tabgroup1/tab1/soilNote" type="freetext"/>-->
+	  <bind nodeset="/faims/tabgroup1/tab1/datetime" type="freetext"/>
+	  <bind nodeset="/faims/tabgroup1/tab1/soilNote" type="freetext"/>
     </model>
   </h:head>
 
@@ -96,9 +97,10 @@
 		 <input ref="zoneIIIdescription">
             <label>Zone III Topsoil Munsell/Texture:</label>
          </input>
+		 <input ref="zoneIIIdepth">
             <label>Zone III Depth (cmbs):</label>
          </input>
-		 <!--<select1 ref="containArt" appearance="full">
+		 <select1 ref="containArt" appearance="full">
 			<label>Contains Artifacts?:</label>
 			<item>
 			  <label>Item A</label>
@@ -112,12 +114,15 @@
 			  <value>0</value>
 			</item>
 		 </select1>
-		 <input ref="datetime">
+		 <input ref="datetime" faims_read_only="false">
             <label>Date/Time Logged:</label>
          </input>
 		 <input ref="soilNote">
             <label>Soil Notes/Comments:</label>
-         </input>-->
+         </input>
+		 <trigger ref="saveButton">
+           <label>Save record</label>
+         </trigger>
       </group>
     </group>
   </h:body>
